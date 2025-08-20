@@ -19,6 +19,7 @@ import "aos/dist/aos.css";
 
 const App = () => {
   const [menu, setMenu] = useState(false);
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const show = () => {
     setMenu(!menu);
@@ -59,7 +60,7 @@ const App = () => {
     formData.append("password", password);
 
     try {
-      const res = await fetch("http://localhost:5000/login/", {
+      const res = await fetch(`${API_URL}/login/`, {
         method: "POST",
         body: formData,
         credentials: "include",
@@ -68,7 +69,7 @@ const App = () => {
       console.log(data);if (data.message === "LOGIN Successfull With Cookies") {
         setIsLoggedIn(true); 
         setVisible(false); 
-        axios.get("http://localhost:5000/admin/auth/checkAuth", { withCredentials: true })
+        axios.get(`${API_URL}/admin/auth/checkAuth`, { withCredentials: true })
           .then(res => {
             if (res.data.loggedIn) {
               setUser(res.data.user);
@@ -85,7 +86,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/auth/checkAuth", { withCredentials: true })
+      .get(`${API_URL}/admin/auth/checkAuth`, { withCredentials: true })
       .then((res) => {
         if (res.data.loggedIn) {
           setIsLoggedIn(true);

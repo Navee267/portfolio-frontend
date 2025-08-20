@@ -13,8 +13,10 @@ const Education = ({ isLoggedIn }) => {
   const [visible, setVisible] = useState(false);
   const [visible1, setVisible1] = useState(false);
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
-    fetch("http://localhost:5000/admin/allEducations")
+    fetch(`${API_URL}/admin/allEducations`)
       .then((res) => res.json())
       .then((data) => {
         if (data.alleducations) {
@@ -48,7 +50,7 @@ const Education = ({ isLoggedIn }) => {
     formData.append("ins", ins);
     formData.append("role", role);
     try {
-      const res = await fetch("http://localhost:5000/admin/addEducation", {
+      const res = await fetch(`${API_URL}/admin/addEducation`, {
         method: "POST",
         body: formData,
         credentials: "include",
@@ -63,7 +65,7 @@ const Education = ({ isLoggedIn }) => {
 
   const [experiences, setExperiences] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/admin/allExperiences")
+    fetch(`${API_URL}/admin/allExperiences`)
       .then((res) => res.json())
       .then((data) => {
         if (data.allexperiences) {
@@ -82,7 +84,7 @@ const Education = ({ isLoggedIn }) => {
     formData.append("ins", ins);
     formData.append("role", role);
     try {
-      const res = await fetch("http://localhost:5000/admin/addExperience", {
+      const res = await fetch(`${API_URL}/admin/addExperience`, {
         method: "POST",
         body: formData,
         credentials: "include",
@@ -100,7 +102,7 @@ const Education = ({ isLoggedIn }) => {
       "Are you sure you want to delete this education?"
     );
     if (confirmed) {
-      fetch(`http://localhost:5000/admin/deleteEducation/${id}`, {
+      fetch(`${API_URL}/admin/deleteEducation/${id}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -121,7 +123,7 @@ const Education = ({ isLoggedIn }) => {
       "Are you sure you want to delete this Ecperience?"
     );
     if (confirmed) {
-      fetch(`http://localhost:5000/admin/deleteExperience/${id}`, {
+      fetch(`${API_URL}/admin/deleteExperience/${id}`, {
         method: "DELETE",
         credentials: "include",
       })

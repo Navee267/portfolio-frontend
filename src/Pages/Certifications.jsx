@@ -11,8 +11,10 @@ const Certifications = ({isLoggedIn}) => {
 
   const [visible,setVisible] = useState(false);
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
-    fetch("http://localhost:5000/admin/allCertifications")
+    fetch(`${API_URL}/admin/allCertifications`)
       .then((res) => res.json())
       .then((data) => {
         if (data.allcertifications) {
@@ -39,7 +41,7 @@ const Certifications = ({isLoggedIn}) => {
     formData.append("provider", provider);
     formData.append("link", link);
     try {
-      const res = await fetch("http://localhost:5000/admin/addCertification", {
+      const res = await fetch(`${API_URL}/admin/addCertification`, {
         method: "POST",
         body: formData,
         credentials : 'include'

@@ -7,12 +7,14 @@ const CertificationBox = ({ id,title, provider, link ,isLoggedIn}) => {
     window.open(link, "_blank", "noopener,noreferrer");
   };
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   const deleteCertification = (id) => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this Certificate?"
     );
     if (confirmed) {
-      fetch(`http://localhost:5000/admin/deleteCertification/${id}`, {
+      fetch(`${API_URL}/admin/deleteCertification/${id}`, {
         method: "DELETE",
         credentials: "include",
       })

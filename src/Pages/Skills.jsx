@@ -15,8 +15,10 @@ const Skills = ({ isLoggedIn }) => {
 
   const [visible, setVisible] = useState(false);
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
-    fetch("http://localhost:5000/admin/allSkills")
+    fetch(`${API_URL}/admin/allSkills`)
       .then((res) => res.json())
       .then((data) => {
         if (data.allskills) {
@@ -43,7 +45,7 @@ const Skills = ({ isLoggedIn }) => {
     formData.append("level", level);
     formData.append("file", file);
     try {
-      const res = await fetch("http://localhost:5000/admin/addSkill", {
+      const res = await fetch(`${API_URL}/admin/addSkill`, {
         method: "POST",
         body: formData,
         credentials: "include",

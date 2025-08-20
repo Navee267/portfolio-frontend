@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 
 const Works = ({isLoggedIn}) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
@@ -18,7 +19,7 @@ const Works = ({isLoggedIn}) => {
 
   const [works, setWorks] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/admin/allProjects")
+    fetch(`${API_URL}/admin/allProjects`)
       .then((res) => res.json())
       .then((data) => {
         if (data.allprojects) {
@@ -45,7 +46,7 @@ const Works = ({isLoggedIn}) => {
         description: project.description,
         link: project.link,
         image: project.file[0]
-          ? `http://localhost:5000/${project.file[0].path.replace(/\\/g, "/")}`
+          ? `${API_URL}/${project.file[0].path.replace(/\\/g, "/")}`
           : null,
       });
       return acc;
@@ -82,7 +83,7 @@ const Works = ({isLoggedIn}) => {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://localhost:5000/admin/addProject", {
+      const res = await fetch(`${API_URL}/admin/addProject`, {
         method: "POST",
         body: formData,
         credentials: "include",
@@ -105,7 +106,7 @@ const Works = ({isLoggedIn}) => {
       "Are you sure you want to delete this Certificate?"
     );
     if (confirmed) {
-      fetch(`http://localhost:5000/admin/deleteProject/${id}`, {
+      fetch(`${API_URL}/admin/deleteProject/${id}`, {
         method: "DELETE",
         credentials: "include",
       })

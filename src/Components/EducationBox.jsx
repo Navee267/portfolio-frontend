@@ -16,8 +16,10 @@ const EducationBox = ({ date, ins, role, isLoggedIn, deleteone }) => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this education?"
     );
+  const API_URL = process.env.REACT_APP_API_URL;
+
     if (confirmed) {
-      fetch(`http://localhost:5000/admin/deleteEducation/${id}`, {
+      fetch(`${API_URL}/admin/deleteEducation/${id}`, {
         method: "DELETE",
         credentials: "include",
       })
@@ -38,7 +40,7 @@ const EducationBox = ({ date, ins, role, isLoggedIn, deleteone }) => {
       "Are you sure you want to delete this Ecperience?"
     );
     if (confirmed) {
-      fetch(`http://localhost:5000/admin/deleteExperience/${id}`, {
+      fetch(`${API_URL}/admin/deleteExperience/${id}`, {
         method: "DELETE",
         credentials: "include",
       })
