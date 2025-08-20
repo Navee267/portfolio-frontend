@@ -1,0 +1,72 @@
+[
+    {
+      "category": "java-fullstack",
+      "projects": [
+        {
+          "name": "Student Management System",
+          "link": "https://example.com/student-management-system",
+          "description": "A Java full-stack application to manage student records with CRUD operations, built using Spring Boot and MySQL.",
+          "image": "student-management-system.png"
+        },
+        {
+          "name": "Online Voting System",
+          "link": "https://example.com/online-voting-system",
+          "description": "A secure voting system enabling user registration, authentication, and vote casting, developed with Spring Boot and MySQL.",
+          "image": "online-voting-system.png"
+        },
+        {
+          "name": "Course Registration System",
+          "link": "https://example.com/course-registration-system",
+          "description": "A Java full-stack solution allowing students to register for courses and view schedules, built using Spring Boot and MySQL.",
+          "image": "course-registration-system.png"
+        }
+      ]
+    },
+    {
+      "category": "mernstack",
+      "projects": [
+        {
+          "name": "Online Banking Website",
+          "link": "https://example.com/online-banking",
+          "description": "A MERN stack application offering online banking functionalities like account creation, balance check, and fund transfer.",
+          "image": "online-banking.png"
+        },
+        {
+          "name": "College Portal Submission",
+          "link": "https://example.com/college-portal",
+          "description": "A MERN stack portal for students to submit assignments, view grades, and communicate with faculty.",
+          "image": "college-portal.png"
+        }
+      ]
+    },
+    {
+      "category": "frontend",
+      "projects": [
+        {
+          "name": "E-Commerce Website",
+          "link": "https://example.com/ecommerce",
+          "description": "A responsive e-commerce frontend built with HTML, CSS, and JavaScript, featuring product listings and a shopping cart.",
+          "image": "ecommerce-website.png"
+        },
+        {
+          "name": "Fruit Shop",
+          "link": "https://example.com/fruit-shop",
+          "description": "A colorful and responsive frontend for a fruit shop, displaying products and pricing dynamically.",
+          "image": "fruit-shop.png"
+        },
+        {
+          "name": "",
+          "link": "",
+          "description": "",
+          "image": ""
+        },
+        {
+          "name": "Dummy Project 2",
+          "link": "",
+          "description": "",
+          "image": ""
+        }
+      ]
+    }
+  ]
+  
