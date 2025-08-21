@@ -14,6 +14,7 @@ const Education = ({ isLoggedIn }) => {
   const [visible1, setVisible1] = useState(false);
 
   const API_URL = process.env.REACT_APP_API_URL;
+  console.log(API_URL);
 
   useEffect(() => {
     fetch(`${API_URL}/admin/allEducations`)

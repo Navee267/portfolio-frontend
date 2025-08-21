@@ -20,6 +20,7 @@ import "aos/dist/aos.css";
 const App = () => {
   const [menu, setMenu] = useState(false);
   const API_URL = process.env.REACT_APP_API_URL;
+  console.log(API_URL);
 
   const show = () => {
     setMenu(!menu);
