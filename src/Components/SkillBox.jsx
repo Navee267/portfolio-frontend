@@ -12,7 +12,7 @@ const SkillBox = ({id,img,skill,level,isLoggedIn}) => {
       once: true,  
     });
   }, []);
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = "https://portfolio-backend-3e40.onrender.com";
 
   const deleteSkill = (id) => {
     const confirmed = window.confirm("Are you sure you want to delete this skill?");

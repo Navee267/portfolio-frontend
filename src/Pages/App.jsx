@@ -19,7 +19,7 @@ import "aos/dist/aos.css";
 
 const App = () => {
   const [menu, setMenu] = useState(false);
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = "https://portfolio-backend-3e40.onrender.com";
   console.log(API_URL);
 
   const show = () => {

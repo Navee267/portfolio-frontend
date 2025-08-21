@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 
 const Works = ({isLoggedIn}) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = "https://portfolio-backend-3e40.onrender.com";
 
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");

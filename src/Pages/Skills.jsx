@@ -15,7 +15,7 @@ const Skills = ({ isLoggedIn }) => {
 
   const [visible, setVisible] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = "https://portfolio-backend-3e40.onrender.com";
 
   useEffect(() => {
     fetch(`${API_URL}/admin/allSkills`)

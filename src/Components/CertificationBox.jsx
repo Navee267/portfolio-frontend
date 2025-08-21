@@ -7,7 +7,7 @@ const CertificationBox = ({ id,title, provider, link ,isLoggedIn}) => {
     window.open(link, "_blank", "noopener,noreferrer");
   };
 
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = "https://portfolio-backend-3e40.onrender.com";
 
   const deleteCertification = (id) => {
     const confirmed = window.confirm(

@@ -11,7 +11,7 @@ const Certifications = ({isLoggedIn}) => {
 
   const [visible,setVisible] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = "https://portfolio-backend-3e40.onrender.com";
 
   useEffect(() => {
     fetch(`${API_URL}/admin/allCertifications`)
@@ -101,7 +101,7 @@ const Certifications = ({isLoggedIn}) => {
             value={link}
             placeholder="Enter Link (Ex : Drive)"
             className="input"
-            onChange={(e) => setLink(e.target.link)}
+            onChange={(e) => setLink(e.target.value)}
           />
           <button
             type="submit"

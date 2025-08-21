@@ -16,7 +16,7 @@ const EducationBox = ({ date, ins, role, isLoggedIn, deleteone }) => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this education?"
     );
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = "https://portfolio-backend-3e40.onrender.com";
 
     if (confirmed) {
       fetch(`${API_URL}/admin/deleteEducation/${id}`, {
