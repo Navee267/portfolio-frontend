@@ -46,7 +46,7 @@ const Works = ({isLoggedIn}) => {
         description: project.description,
         link: project.link,
         image: project.file[0]
-          ? `${API_URL}/${project.file[0].path.replace(/\\/g, "/")}`
+          ? `${API_URL}/uploads/${project.file[0].path.replace(/\\/g, "/")}`
           : null,
       });
       return acc;
